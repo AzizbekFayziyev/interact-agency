@@ -1,0 +1,245 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+// Font size Kanit
+@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Syne:wght@700&display=swap');
+
+
+body,
+html {
+     overflow-x: hidden !important;
+}
+
+body {
+     transition: 0.3s all ease;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+span,
+button {
+     font-family: 'Kanit', sans-serif !important;
+}
+
+.syne {
+     font-family: 'Syne', sans-serif !important;
+}
+
+// Background items
+.bgBlur {
+     z-index: -1;
+     @apply w-80 h-80 blur-[125px] rounded-full absolute;
+     background: rgba(153, 14, 207, 0.562);
+     overflow: hidden;
+}
+
+// Scrollbar customization
+::-webkit-scrollbar {
+     width: 6px;
+     padding-left: 5px;
+}
+
+
+::-webkit-scrollbar-track {
+     background: transparent;
+}
+
+
+::-webkit-scrollbar-thumb {
+     background: #888;
+     border-radius: 5px;
+}
+
+
+::-webkit-scrollbar-thumb:hover {
+     background: #555;
+}
+
+// Mobie fontSize
+
+@media(max-width: 480px) {
+     html {
+          font-size: 14px;
+     }
+}
+
+.header {
+     @apply flex items-center flex-wrap overflow-hidden;
+
+
+     &__info {
+          @apply flex items-center;
+
+          &_item {
+               @apply mr-4 my-8 text-center bg-primary/20 p-3 rounded-sm w-[150px];
+          }
+     }
+
+     &__imgs {
+          @apply relative w-[600px] h-[500px] mb-8;
+
+          img {
+               transition: .1s transform linear;
+          }
+     }
+}
+
+.services {
+     @apply w-full bg-universal rounded-t-[120px] pt-28 mt-12 text-black;
+
+     .service {
+          @apply flex items-center justify-center flex-wrap mt-8;
+
+          .service__item {
+               @apply w-[400px] m-3 bg-primary/20 p-6 rounded-md cursor-pointer;
+               transition: .5s all ease;
+
+               &_arrow {
+                    @apply bg-gray-200 p-2 rounded-full;
+               }
+
+               &_icon {
+                    @apply text-primaryLight;
+               }
+
+               &:hover {
+                    @apply bg-primaryLight;
+
+                    .service__item_icon,
+                    .service__item_text {
+                         transition: .3s all linear;
+                         @apply text-white;
+                    }
+               }
+          }
+     }
+}
+
+.buildingProgress {
+     @apply flex items-center justify-between py-20;
+
+     .progress {
+          @apply flex;
+
+          &__card {
+               @apply max-w-[330px] mx-6 mb-4
+          }
+     }
+}
+
+.about {
+     @apply flex items-center justify-center relative;
+
+     &__content {
+          @apply max-w-[500px] ml-10;
+
+          h6 {
+               @apply mt-3
+          }
+     }
+
+     &__img {
+          @apply flex items-center;
+
+          img {
+               @apply mr-4 max-w-[300px];
+
+               &:nth-child(1) {
+                    @apply mb-56
+               }
+          }
+     }
+}
+
+.faq {
+     @apply bg-universal rounded-b-[120px];
+}
+
+@media(max-width: 1100px) {
+     .buildingProgress {
+          @apply flex-wrap justify-center;
+
+          .progress {
+               @apply mt-8;
+          }
+
+     }
+
+     .about {
+          @apply flex-col;
+
+          &__content {
+               @apply -mt-16
+          }
+     }
+}
+
+
+@media(max-width: 620px) {
+     .header {
+          &__info {
+               &_item {
+                    @apply w-[100px];
+               }
+          }
+     }
+
+     .services {
+          @apply rounded-t-[50px]
+     }
+
+     .about {
+          &__img {
+               img {
+                    @apply w-[200px];
+
+                    &:nth-child(1) {
+                         @apply mb-36
+                    }
+               }
+          }
+     }
+
+     .faq {
+          @apply rounded-b-[50px]
+     }
+}
+
+@media (max-width: 820px) {
+     .buildingProgress .progress {
+          @apply flex-wrap justify-center;
+
+          &__card {
+               @apply mt-6;
+          }
+     }
+}
+
+@media (max-width: 460px) {
+     .about {
+          &__img {
+               img {
+                    @apply w-[145px]
+               }
+          }
+     }
+
+}
+
+@media (max-width: 370px) {
+     .header {
+          &__info {
+               @apply justify-center;
+               
+               &_item {
+                    @apply w-full;
+               }
+          }
+     }
+}
